@@ -1,8 +1,12 @@
-import React ,{useState,useCallback} from 'react';
+import React ,{useState,useEffect,useRef} from 'react';
 
 export default function App() {
   const [name, setName] = useState('')
-  
+  const renderCount = useRef(1)
+
+  useEffect(() => {
+    renderCount.current+=1
+  })
 
   return (
     <div >
@@ -10,6 +14,7 @@ export default function App() {
           value={name}
           onChange={e => setName(e.target.value)}/>
         <div>My name is {name}</div>
+        <div>I rendered {renderCount.current} times</div>
 
     </div>
   )
