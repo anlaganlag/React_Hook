@@ -8,6 +8,7 @@ export default function App() {
     prevName.current = name
   }, [name])
 
+  console.log({prevName})
 
   return (
     <div >
